@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # AWS Stuff
-./ecs-user_accessKeys.csv
+ecs-user_accessKeys.csv
