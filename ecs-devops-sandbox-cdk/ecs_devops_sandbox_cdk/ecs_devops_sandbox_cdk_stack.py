@@ -50,14 +50,8 @@ class EcsDevopsSandboxCdkStack(core.Stack):
         port_mapping = ecs.PortMapping(container_port=5000, host_port=5000)
         container.add_port_mappings(port_mapping)
 
-        # Create the ECS Service
-        service = ecs.FargateService(self,
-                                     "ecs-devops-sandbox-service",
-                                     cluster=cluster,
-                                     task_definition=task_definition,
-                                     service_name="ecs-devops-sandbox-service")
 
-        # service = ecs_patterns.ApplicationLoadBalancedFargateService(self, "ecs-devops-sandbox-service",
+        # ecs_patterns.ApplicationLoadBalancedFargateService(self, "ecs-devops-sandbox-service",
             # cluster=cluster,
             # task_definition=task_definition,
             # desired_count=2,
@@ -65,12 +59,10 @@ class EcsDevopsSandboxCdkStack(core.Stack):
             # memory_limit_mib=2048,
             # public_load_balancer=True)
 
+        #Create the ECS Service
+        service = ecs.FargateService(self,
+                                     "ecs-devops-sandbox-service",
+                                     cluster=cluster,
+                                     task_definition=task_definition,
+                                     service_name="ecs-devops-sandbox-service")
 
-        # ecs_patterns.ApplicationLoadBalancedFargateService(self, "MyFargateService",
-            # cluster=cluster,            # Required
-            # cpu=512,                    # Default is 256
-            # desired_count=6,            # Default is 1
-            # task_image_options=ecs_patterns.ApplicationLoadBalancedTaskImageOptions(
-                # image=ecs.ContainerImage.from_registry("amazon/amazon-ecs-sample")),
-            # memory_limit_mib=2048,      # Default is 512
-            # public_load_balancer=True)  # Default is False
