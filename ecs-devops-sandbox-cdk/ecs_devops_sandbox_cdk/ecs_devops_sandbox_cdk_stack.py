@@ -58,7 +58,6 @@ class EcsDevopsSandboxCdkStack(core.Stack):
             desired_count=2,
             cpu=512,
             memory_limit_mib=2048,
-            assign_public_ip=True,
             public_load_balancer=True)
 
         #Create the ECS Service
