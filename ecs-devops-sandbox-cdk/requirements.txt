@@ -1,1 +1,2 @@
 -e .
+aws-cdk.aws-ecs-patterns==1.87.1

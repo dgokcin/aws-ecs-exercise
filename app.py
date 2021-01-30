@@ -3,7 +3,7 @@
 from flask import Flask
 
 MESSAGE = "Hello from Deniz!\n"
-PORT = 51679
+PORT = 5000
 app = Flask(__name__)
 
 @app.route('/<random_string>')

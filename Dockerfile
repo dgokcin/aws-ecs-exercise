@@ -2,7 +2,7 @@ FROM python:3
 # Set application working directory
 WORKDIR /usr/src/app
 
-EXPOSE 51679
+EXPOSE 5000
 # Install requirements
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
