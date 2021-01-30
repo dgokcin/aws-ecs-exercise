@@ -52,7 +52,7 @@ class EcsDevopsSandboxCdkStack(core.Stack):
 
 
         # Create a load balanced ECS Service
-        ecs_patterns.ApplicationLoadBalancedFargateService(self, "ecs-devops-sandbox-service",
+        service = ecs_patterns.ApplicationLoadBalancedFargateService(self, "ecs-devops-sandbox-service",
             cluster=cluster,
             task_definition=task_definition,
             desired_count=2,
