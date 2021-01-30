@@ -48,11 +48,12 @@ class EcsDevopsSandboxCdkStack(core.Stack):
         )
 
         # Create the ECS Service
-        # service = ecs.FargateService(self,
-                                     # "ecs-devops-sandbox-service",
-                                     # cluster=cluster,
-                                     # task_definition=task_definition,
-                                     # service_name="ecs-devops-sandbox-service")
+        service = ecs.FargateService(self,
+                                     "ecs-devops-sandbox-service",
+                                     cluster=cluster,
+                                     task_definition=task_definition,
+                                     service_name="ecs-devops-sandbox-service")
+
         # ecs_patterns.ApplicationLoadBalancedFargateService(self, "MyFargateService",
             # cluster=cluster,            # Required
             # cpu=512,                    # Default is 256
