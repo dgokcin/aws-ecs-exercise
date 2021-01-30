@@ -1,5 +1,6 @@
 """AWS CDK module to create ECS infrastructure"""
-from aws_cdk import (core, aws_ecs as ecs, aws_ecr as ecr, aws_ec2 as ec2, aws_iam as iam)
+from aws_cdk import (core, aws_ecs as ecs, aws_ecr as ecr, aws_ec2 as ec2,
+        aws_iam as iam, aws_ecs_patterns as ecs_patterns)
 
 class EcsDevopsSandboxCdkStack(core.Stack):
 
@@ -47,8 +48,16 @@ class EcsDevopsSandboxCdkStack(core.Stack):
         )
 
         # Create the ECS Service
-        service = ecs.FargateService(self,
-                                     "ecs-devops-sandbox-service",
-                                     cluster=cluster,
-                                     task_definition=task_definition,
-                                     service_name="ecs-devops-sandbox-service")
+        # service = ecs.FargateService(self,
+                                     # "ecs-devops-sandbox-service",
+                                     # cluster=cluster,
+                                     # task_definition=task_definition,
+                                     # service_name="ecs-devops-sandbox-service")
+        # ecs_patterns.ApplicationLoadBalancedFargateService(self, "MyFargateService",
+            # cluster=cluster,            # Required
+            # cpu=512,                    # Default is 256
+            # desired_count=6,            # Default is 1
+            # task_image_options=ecs_patterns.ApplicationLoadBalancedTaskImageOptions(
+                # image=ecs.ContainerImage.from_registry("amazon/amazon-ecs-sample")),
+            # memory_limit_mib=2048,      # Default is 512
+            # public_load_balancer=True)  # Default is False
