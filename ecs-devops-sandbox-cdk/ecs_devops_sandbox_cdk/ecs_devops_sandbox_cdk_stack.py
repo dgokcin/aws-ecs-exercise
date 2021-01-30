@@ -51,18 +51,19 @@ class EcsDevopsSandboxCdkStack(core.Stack):
         container.add_port_mappings(port_mapping)
 
 
-        # ecs_patterns.ApplicationLoadBalancedFargateService(self, "ecs-devops-sandbox-service",
-            # cluster=cluster,
-            # task_definition=task_definition,
-            # desired_count=2,
-            # cpu=512,
-            # memory_limit_mib=2048,
-            # public_load_balancer=True)
+        ecs_patterns.ApplicationLoadBalancedFargateService(self, "ecs-devops-sandbox-service",
+            cluster=cluster,
+            task_definition=task_definition,
+            desired_count=2,
+            cpu=512,
+            memory_limit_mib=2048,
+            assign_public_ip=True,
+            public_load_balancer=True)
 
         #Create the ECS Service
-        service = ecs.FargateService(self,
-                                     "ecs-devops-sandbox-service",
-                                     cluster=cluster,
-                                     task_definition=task_definition,
-                                     service_name="ecs-devops-sandbox-service")
+        # service = ecs.FargateService(self,
+                                     # "ecs-devops-sandbox-service",
+                                     # cluster=cluster,
+                                     # task_definition=task_definition,
+                                     # service_name="ecs-devops-sandbox-service")
 
