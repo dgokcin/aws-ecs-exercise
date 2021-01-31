@@ -42,23 +42,22 @@ class EcsDevopsSandboxCdkStack(core.Stack):
                                                     "ecs-devops-sandbox-task-definition",
                                                     execution_role=execution_role,
                                                     family="ecs-devops-sandbox-task-definition")
+
         container = task_definition.add_container(
             "ecs-devops-sandbox",
             image=ecs.ContainerImage.from_registry("amazon/amazon-ecs-sample")
         )
 
-        port_mapping = ecs.PortMapping(container_port=5000, host_port=5000)
+        port_mapping = ecs.PortMapping(container_port=5000)
         container.add_port_mappings(port_mapping)
 
 
         # Create a load balanced ECS Service
-        service = ecs_patterns.ApplicationLoadBalancedFargateService(self, "ecs-devops-sandbox-service",
+        # Athough this block works, I was not able to
+        load_balanced_service = ecs_patterns.ApplicationLoadBalancedFargateService(self, "ecs-devops-sandbox-service",
             cluster=cluster,
             task_definition=task_definition,
-            desired_count=2,
-            cpu=512,
-            memory_limit_mib=2048,
-            public_load_balancer=True)
+            service_name="ecs-devops-sandbox-service")
 
         #Create the ECS Service
         # service = ecs.FargateService(self,

@@ -13,7 +13,6 @@
                 {
                     "containerPort": "5000",
                     "protocol": "tcp",
-                    "hostPort": "5000"
                 }
                 
             ]
