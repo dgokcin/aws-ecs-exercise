@@ -32,12 +32,21 @@ you are using to manage your containers.
 ### Screenshots
 
 #### Deploying the infrastructure with aws-cdk
-
+![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/cdk-deploy.png)
 #### Triggering Amazon CodeBuild with a commit
+![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/git-sha.png)
+![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/code-build.png)
 
 #### Building and pushing the current webapp to ECR
+![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/ecr-repositories.png)
 
 #### Applying the task definition
+![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/github-actions-successful-pipeline.png)
+![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/checks.png)
+
+#### The new version deployed with GitOps
+![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/gitops.png)
+
 
 ### References
 
