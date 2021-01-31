@@ -39,6 +39,12 @@ of a web application.
 
   Since it was included in the free-tier, I used it in my stack.
 
+- `Amazon ECR`: Amazon Elastic Container Registry (ECR) is a fully managed
+  container registry that makes it easy to store, manage, share, and deploy your
+  container images and artifacts anywhere.
+
+  Since it was included in the free-tier, I used it in my stack.
+
 - `AWS Fargate`: AWS Fargate is a serverless compute engine for containers that
   works with both Amazon Elastic Container Service (ECS) and Amazon Elastic
   Kubernetes Service (EKS). Fargate makes it easy for you to focus on building
@@ -73,21 +79,24 @@ pip install aws_cdk.aws_ec2 aws_cdk.aws_ecs aws_cdk.aws_ecr aws_cdk.aws_iam aws_
 cdk deploy
 ```
 
-### Deleting the Infrastructure
+### Destroying the Infrastructure
 
 ```bash
 cd ecs-devops-sandbox-cdk
 cdk destroy
 ```
+
 ## Screenshots
 
-#### Deploying the infrastructure with aws-cdk
+### Deploying the infrastructure with aws-cdk
+
 ![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/cdk-deploy.png)
-#### Triggering Amazon CodeBuild with a commit
+### Triggering Amazon CodeBuild with a commit
 ![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/git-sha.png)
 ![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/code-build.png)
 
-#### Building and pushing the current webapp to ECR
+### Building and pushing the current webapp to ECR
+
 ![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/ecr-repositories.png)
 
 #### Applying the task definition
@@ -97,6 +106,9 @@ cdk destroy
 #### The old version and new version deployed with GitOps
 ![pic](https://github.com/dgokcin/aws-ecs-exercise/blob/master/pic/gitops.png)
 
+The deployed service can be accessed from the
+[DNS](http://ecs-d-ecsde-18m8t9v4jik0t-167631541.eu-west-2.elb.amazonaws.com)
+name of the loadbalancer.
 
 ### References
 
