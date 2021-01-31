@@ -130,4 +130,4 @@ dmypy.json
 
 # AWS Stuff
 ecs-user_accessKeys.csv
-ecs-user_sign-in-credentials.csv
+read-only_sign-in-credentials.csv
