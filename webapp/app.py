@@ -2,7 +2,7 @@
 
 from flask import Flask
 
-MESSAGE = "Hello from Deniz v0.0.3!\n"
+MESSAGE = "Hello from Deniz v0.0.4!\n"
 PORT = 5000
 app = Flask(__name__)
 
